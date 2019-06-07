@@ -12,7 +12,7 @@ rotate a b = (drop b a) ++ (take b a)
 
 insertAt x xs n = [ if y == n-1 then x else if y < n-1 then xs!!y else xs!!(y-1) | y <- [0..length(xs)] ] 
 
-combinations 0 = [[]]
+combinations 0 _ = [[]]
 combinations n xs = [ xs!!index : x | index <- [0..(length(xs)-1)] , x <- combinations (n-1) (drop(index +1) xs) ]
 
 isPrime 1 = True
